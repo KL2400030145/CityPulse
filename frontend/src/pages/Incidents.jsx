@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Search, Plus, MapPin, Clock3, UserRound, X, Check } from 'lucide-react'
-const API = 'http://127.0.0.1:8000/api'
+const API = 'https://citypulse-3heq.onrender.com/api'
 const statuses = ['Reported','Assigned','In Progress','Resolved','Closed']
 const severityClass = s => `severity ${s.toLowerCase()}`
 export default function Incidents({ incidents, refresh }) {

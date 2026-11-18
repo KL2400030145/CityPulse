@@ -5,8 +5,7 @@ import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YA
 import MetricCard from './components/MetricCard'
 import TrafficMap from './components/TrafficMap'
 import Incidents from './pages/Incidents'
-
-const API='http://127.0.0.1:8000/api'
+const API='https://citypulse-3heq.onrender.com/api'
 const fmt = n => Number(n||0).toLocaleString('en-IN')
 function App(){
   const [page,setPage]=useState('Overview')
@@ -35,7 +34,7 @@ function App(){
     let ws
     let retry
     const connect=()=>{
-      ws=new WebSocket('ws://127.0.0.1:8000/ws/traffic')
+      ws=new WebSocket('wss://citypulse-3heq.onrender.com/ws/traffic')
       ws.onopen=()=>setConnected(true)
       ws.onclose=()=>{setConnected(false);retry=setTimeout(connect,3000)}
       ws.onerror=()=>ws.close()
